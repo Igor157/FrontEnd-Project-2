@@ -16,8 +16,11 @@ export class AvaibleCurrencies extends React.Component {
     let target = e.target;
     while (target !== this) {
       if (target.className === 'ik-avaible-currencies__row') {
-        this.props.getDynamic(target.getAttribute('id'));
-        this.props.changeCurForDynamic(target.getAttribute('abr'));
+        // let end = new Date(Date.now());
+        // let start = new Date(end);
+        // start.setDate(start.getDate() - 20);
+        // this.props.getDynamic(target.getAttribute('id'),start, end);
+        this.props.changeCurForDynamic(target.getAttribute('id'));
         return;
       }
       target = target.parentNode;
@@ -39,7 +42,7 @@ export class AvaibleCurrencies extends React.Component {
         className="ik-avaible-currencies__row"
         id={item.curId}
         abr={item.curAbr}
-        >
+      >
         <div className="ik-avaible-currencies__abr">{item.curAbr}</div>
         <div className="ik-avaible-currencies__rate">{item.curRate}</div>
         <button

@@ -21,6 +21,8 @@ import { BothSideConverterContainer } from '../../containers/ik-both-side-conver
 import { EmptyTemplate } from '../../components/empty-template';
 import { ConnectedCurrencyCalculator } from '../../containers/ik-connected-currency-calculator.container.js';
 import { About } from '../about';
+import {CurrencyDynamicForDates} from '../currency-dynamic-for-dates';
+import {ConnectedCurrencyDynamicForDates} from '../../containers/ik-connected-currency-for-dates.container.js';
 
 export class CurrencyPage extends React.Component {
 
@@ -76,7 +78,7 @@ export class CurrencyPage extends React.Component {
               />
               <Route
                 exact path='/'
-                render={() => <ChangeableCurrencyDateTable
+                render={() => <ConnectedCurrencyDynamicForDates
                   className="ik-currency-page__info-place"
                 />}
               />

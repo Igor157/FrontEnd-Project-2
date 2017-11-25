@@ -38,17 +38,23 @@ class RequestServices {
             });
         // .catch(err => { console.log(err) });
     }
-    getDynamicOfCurrencie(reqId, start, end) {
+    getDynamicOfCurrencie(reqId, startMoment, endMoment) {
+        console.dir(startMoment);
+        console.dir(endMoment);
+        let start = startMoment._d;
+        let end = endMoment._d;
         let startDate = `${start.getFullYear()}-${start.getMonth() + 1}-${start.getDate()}`;
         let endDate = `${end.getFullYear()}-${end.getMonth() + 1}-${end.getDate()}`;
         // http://www.nbrb.by/API/ExRates/Rates/Dynamics/190?startDate=2016-6-1&endDate=2016-6-30
         let urlForPeriod = `http://www.nbrb.by/API/ExRates/Rates/Dynamics/${reqId}?startDate=${startDate}&endDate=${endDate}`;
         return this.reqCur(urlForPeriod);
     }
-    getDynamicForCurId(id) {
-        let end = new Date(Date.now());
-        let start = new Date(end);
-        start.setDate(start.getDate() - 20);
+    getDynamicForCurId(id, start, end) {
+        console.log(start);
+        console.log(end);
+        // let end = new Date(Date.now());
+        // let start = new Date(end);
+        // start.setDate(start.getDate() - 20);
         let dynamicOfCurrencie = this.getDynamicOfCurrencie(id, start, end);
         return dynamicOfCurrencie
             .then((data = []) => {

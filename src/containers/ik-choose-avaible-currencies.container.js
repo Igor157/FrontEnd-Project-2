@@ -20,8 +20,8 @@ const mapDispatchToProps = (dispatch) => {
     getCur: () => {
       dispatch(getCur());
     },
-    getDynamic: (target) => {
-      dispatch(getDynamic(target));
+    getDynamic: (target, start, end) => {
+      dispatch(getDynamic(target, start, end));
     }
   };
 };
