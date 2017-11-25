@@ -16,10 +16,10 @@ export class AvaibleCurrencies extends React.Component {
     let target = e.target;
     while (target !== this) {
       if (target.className === 'ik-avaible-currencies__row') {
-        // let end = new Date(Date.now());
-        // let start = new Date(end);
-        // start.setDate(start.getDate() - 20);
-        // this.props.getDynamic(target.getAttribute('id'),start, end);
+        let end = new Date(Date.now());
+        let start = new Date(end);
+        start.setDate(start.getDate() - 20);
+        this.props.getDynamic(target.getAttribute('id'),this.props.startDate, this.props.endDate);
         this.props.changeCurForDynamic(target.getAttribute('id'));
         return;
       }

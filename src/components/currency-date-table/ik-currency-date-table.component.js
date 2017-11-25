@@ -5,11 +5,6 @@ import { EmptyTemplate } from '../empty-template/ik-empty-template.component.js'
 
 export class CurrencyDateTable extends React.Component {
   render() {
-    if (this.props.dynamic.length === 0) {
-      return (
-        <EmptyTemplate />
-      );
-    }
     const pageElementClass = this.props.className;
     let abr = this.props.abr;
     let currencyTable = this.props.dynamic.map(function (item, index) {

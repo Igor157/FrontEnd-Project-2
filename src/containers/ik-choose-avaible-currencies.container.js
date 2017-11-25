@@ -8,7 +8,9 @@ import {AvaibleCurrencies} from '../components/avaible-currencies';
 const mapStateToProps = (state) => {
   return {
     cur: state.getCurrencies.cur,
-    filterText: state.avaibleCurrencies.filterText
+    filterText: state.avaibleCurrencies.filterText,
+    startDate: state.changeDate.startDate,
+    endDate: state.changeDate.endDate
   };
 };
 
