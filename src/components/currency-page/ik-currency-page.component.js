@@ -24,6 +24,7 @@ import { About } from '../about';
 import {CurrencyDynamicForDates} from '../currency-dynamic-for-dates';
 import {ConnectedCurrencyDynamicForDates} from '../../containers/ik-connected-currency-for-dates.container.js';
 import {ConnectedNavigation} from '../../containers/connected-navigation.js';
+import {ConnectedFavoriteCurrencies} from '../../containers/connected-favorite-currencies.container.js';
 
 export class CurrencyPage extends React.Component {
 
@@ -85,7 +86,8 @@ export class CurrencyPage extends React.Component {
               />
               <Route
                 path='/favorite'
-                render={() => <EmptyTemplate
+                render={() => <ConnectedFavoriteCurrencies
+                className="ik-currency-page__favorite-currencies"
                 />}
               />
               <Route
