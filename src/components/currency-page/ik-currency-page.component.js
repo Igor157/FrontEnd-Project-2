@@ -23,6 +23,7 @@ import { ConnectedCurrencyCalculator } from '../../containers/ik-connected-curre
 import { About } from '../about';
 import {CurrencyDynamicForDates} from '../currency-dynamic-for-dates';
 import {ConnectedCurrencyDynamicForDates} from '../../containers/ik-connected-currency-for-dates.container.js';
+import {ConnectedNavigation} from '../../containers/connected-navigation.js';
 
 export class CurrencyPage extends React.Component {
 
@@ -52,7 +53,7 @@ export class CurrencyPage extends React.Component {
                 />}
               />
             </Switch>
-            <Navigation
+            <ConnectedNavigation
               className="ik-currency-page__navigation"
             />
             <Switch>

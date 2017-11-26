@@ -62,11 +62,12 @@ export function getDynamic(curID, start, end) {
             });
     };
 }
-export function changeCurForDynamic(id) {
+export function changeCurForDynamic(id, abr) {
     return {
         type: 'CHANGE_CUR_FOR_DYNAMIC',
         payload: {
-            changedId: id
+            changedId: id,
+            changedAbr: abr
         }
     };
 }
@@ -132,4 +133,14 @@ export function changeEndDate(date) {
             endDate: date
         }
     };
+}
+export function addCurToFavorite(abr, id) {
+    return {
+        type: 'ADD_CUR_TO_FAVORITE',
+        payload: {
+            favoriteId:id,
+            favoriteAbr:abr
+        }
+    };
+
 }

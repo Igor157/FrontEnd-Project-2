@@ -11,7 +11,7 @@ import {
     Switch
 } from 'react-router-dom';
 import { createStore } from 'redux';
-let store = configureStore({ getCurrencies: { cur: [] }, getDynamic: { dynamic:[]} });
+let store = configureStore({ getCurrencies: { cur: [] }, getDynamic: { dynamic:[]}, curToFavorite: { favoriteCurData:[]}});
 ReactDOM.render(
     <Provider store={store}>
         <Router>

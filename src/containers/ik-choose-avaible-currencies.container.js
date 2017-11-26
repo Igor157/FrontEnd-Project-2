@@ -16,8 +16,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeCurForDynamic: (target) => {
-      dispatch(changeCurForDynamic(target));
+    changeCurForDynamic: (id, abr) => {
+      dispatch(changeCurForDynamic(id, abr));
     },
     getCur: () => {
       dispatch(getCur());

@@ -20,6 +20,7 @@ export class CurrencyDynamicForDates extends React.Component {
     this.props.changeEndDate(moment());
     this.handleChangeStart = this.handleChangeStart.bind(this);
     this.handleChangeEnd = this.handleChangeEnd.bind(this);
+    this.clickToFavorite = this.clickToFavorite.bind(this);
   }
 
   handleChangeStart(date) {
@@ -30,6 +31,9 @@ export class CurrencyDynamicForDates extends React.Component {
     this.props.changeEndDate(date);
     this.props.getDynamic(this.props.choosenId, this.props.startDate, date);
   }
+  clickToFavorite() {
+    this.props.addCurToFavorite(this.props.choosenAbr, this.props.choosenId);
+  }
 
   render() {
     if (this.props.choosenId === undefined) {
@@ -38,9 +42,12 @@ export class CurrencyDynamicForDates extends React.Component {
       );
     }
     return (
-      <div classname="ik-currency-dynamic-for-dates">
+      <div className="ik-currency-dynamic-for-dates">
         <div className="ik-currency-dynamic-for-dates__date-input">
-          <button className="ik-currency-dynamic-for-dates__savebutton">To Favorite</button>
+          <button
+            onClick={this.clickToFavorite} className="ik-currency-dynamic-for-dates__savebutton"
+          >To Favorite
+            </button>
           <div className="ik-currency-dynamic-for-dates__date-picker">
             <div>From date</div>
             <DatePicker

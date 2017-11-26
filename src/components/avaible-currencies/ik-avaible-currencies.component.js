@@ -20,7 +20,7 @@ export class AvaibleCurrencies extends React.Component {
         let start = new Date(end);
         start.setDate(start.getDate() - 20);
         this.props.getDynamic(target.getAttribute('id'),this.props.startDate, this.props.endDate);
-        this.props.changeCurForDynamic(target.getAttribute('id'));
+        this.props.changeCurForDynamic(target.getAttribute('id'), target.getAttribute('abr'));
         return;
       }
       target = target.parentNode;
